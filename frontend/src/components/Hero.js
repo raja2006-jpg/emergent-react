@@ -30,6 +30,9 @@ function Hero() {
       <div className="absolute top-1/3 right-1/4 text-pink-500 opacity-20 animate-float" style={{ animationDelay: '4s' }}>
         <Sparkles size={60} />
       </div>
+       <div className="absolute bottom-1/3 left-1/4 text-purple-700 opacity-20 animate-float" style={{ animationDelay: '4s' }}>
+        <Sparkles size={60} />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -101,10 +104,10 @@ function Hero() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {[
-              { number: '50+', label: 'Projects Delivered' },
-              { number: '98%', label: 'Client Satisfaction' },
+              { number: '10+', label: 'Projects Delivered' },
+              { number: '90%', label: 'Client Satisfaction' },
               { number: '24/7', label: 'Support Available' },
-              { number: '5+', label: 'Years Experience' }
+              { number: '2+', label: 'Years Experience' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>

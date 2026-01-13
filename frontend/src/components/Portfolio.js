@@ -1,134 +1,187 @@
-
-
 import React, { useState } from 'react';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
+import { motion } from 'framer-motion';
 import { ExternalLink, Clock, User } from 'lucide-react';
 
-function Portfolio({ items, loading }) {
-  const [filter, setFilter] = useState('All');
+/* ===================== DATA ===================== */
+const PROJECTS = [
+  {
+    id: 1,
+    title: 'FullStack Development',
+    category: 'Web Development',
+    description: 'Modern agency website with responsive UI and animations.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    link: 'https://nexlet.vercel.app',
+    client: 'NeXLet',
+    duration: '2 Weeks',
+    tech: ['React','Angular', 'Tailwind', 'APIs','etc..'],
+  },
+  {
+    id: 2,
+    title: 'Startup Landing Page',
+    category: 'Landing Page',
+    description: 'High-conversion landing page for startups.',
+    image: 'https://images.unsplash.com/photo-1519337265831-281ec6cc8514',
+    link: 'https://nexlet.vercel.app',
+    client: 'Startup Client',
+    duration: '5 Days',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    id: 3,
+    title: 'Mobile App UI',
+    category: 'UI/UX Design',
+    description: 'Clean and modern mobile app UI/UX design.',
+    image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d',
+    link: 'https://nexlet.vercel.app',
+    client: 'Design Studio',
+    duration: '1 Week',
+    tech: ['Figma', 'UX'],
+  },
+  
+];
 
+/* ===================== ANIMATIONS ===================== */
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+};
+
+/* ===================== COMPONENT ===================== */
+function Portfolio() {
+  const [active, setActive] = useState('All');
   const categories = ['All', 'Web Development', 'UI/UX Design', 'Landing Page'];
 
-  const filteredItems = filter === 'All' 
-    ? items 
-    : items.filter(item => item.category === filter);
+  const visible =
+    active === 'All'
+      ? PROJECTS
+      : PROJECTS.filter(p => p.category === active);
 
   return (
-    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 relative" data-testid="portfolio-section">
+    <section
+      id="portfolio"
+      className="py-24 px-4 bg-gradient-to-b from-black via-gray-900 to-black"
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Our Portfolio
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400">
             Explore our recent projects and see how we bring ideas to life
           </p>
-        </div>
+        </motion.div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                filter === category
-                  ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/50'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
-              }`}
-              data-testid={`filter-${category.toLowerCase().replace(/\s+/g, '-')}`}
+        {/* Filters */}
+        <div className="flex justify-center flex-wrap gap-4 mb-16">
+          {categories.map(cat => (
+            <motion.button
+              key={cat}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setActive(cat)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all
+                ${
+                  active === cat
+                    ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/40'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                }
+              `}
             >
-              {category}
-            </button>
+              {cat}
+            </motion.button>
           ))}
         </div>
 
-        {/* Portfolio Grid */}
-        {loading ? (
-          <div className="text-center text-gray-400 py-12">
-            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-blue-500 border-r-transparent"></div>
-            <p className="mt-4">Loading portfolio...</p>
-          </div>
-        ) : filteredItems.length === 0 ? (
-          <div className="text-center text-gray-400 py-12">
-            <p>No projects found in this category.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item, index) => (
-              <Card
-                key={item.id}
-                className="bg-white/5 border-white/10 backdrop-blur-lg overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
-                data-testid={`portfolio-item-${index}`}
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                    {item.link && (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                      >
-                        <ExternalLink className="h-5 w-5 text-white" />
-                      </a>
-                    )}
-                  </div>
-                  <Badge className="absolute top-4 left-4 bg-blue-500/90 text-white">
-                    {item.category}
-                  </Badge>
+        {/* Grid */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          {visible.map(project => (
+            <motion.div
+              key={project.id}
+              variants={item}
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden"
+            >
+              {/* Image */}
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-4 right-4 bg-black/60 p-2 rounded-full hover:bg-black/80"
+                  >
+                    <ExternalLink className="w-5 h-5 text-white" />
+                  </a>
+                )}
+
+                <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
+                  {project.category}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-400 text-sm mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex gap-4 text-xs text-gray-500 mb-4">
+                  <span className="flex items-center gap-1">
+                    <User className="w-3 h-3" />
+                    {project.client}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    {project.duration}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {item.description}
-                  </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((t, i) => (
+                    <span
+                      key={i}
+                      className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400 border border-white/10"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-                  {/* Meta Info */}
-                  <div className="flex flex-wrap gap-2 mb-4 text-xs text-gray-500">
-                    {item.client && (
-                      <span className="flex items-center gap-1">
-                        <User className="h-3 w-3" />
-                        {item.client}
-                      </span>
-                    )}
-                    {item.duration && (
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {item.duration}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {item.technologies.slice(0, 4).map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 text-xs rounded bg-white/5 text-gray-400 border border-white/10"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
       </div>
     </section>
   );
