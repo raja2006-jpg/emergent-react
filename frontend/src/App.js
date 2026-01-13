@@ -1,0 +1,22 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AdminPage from './pages/AdminPage';
+import { Toaster } from './components/ui/sonner';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </BrowserRouter>
+      <Toaster position="top-right" richColors />
+    </div>
+  );
+}
+
+export default App;
