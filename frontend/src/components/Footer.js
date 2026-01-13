@@ -122,6 +122,7 @@ function Footer() {
             >
               Contact Us
             </Button>
+            <a href="/admin" className="text-white hover:text-gray-300">Admin</a>
           </div>
         </div>
 
