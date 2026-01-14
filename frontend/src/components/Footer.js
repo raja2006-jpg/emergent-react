@@ -39,7 +39,7 @@ function Footer() {
               <div className="text-2xl font-bold text-white">
                 <span className="text-blue-500">NeX</span>Let
               </div>
-              <span className="text-xs text-blue-400 font-semibold">📈</span>
+              
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Crafting modern, responsive & scalable web solutions. Where code meets creativity.
@@ -122,7 +122,7 @@ function Footer() {
             >
               Contact Us
             </Button>
-            <a href="/admin" className="text-white hover:text-gray-300">Admin</a>
+            
           </div>
         </div>
 

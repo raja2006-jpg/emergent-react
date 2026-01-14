@@ -60,7 +60,7 @@ function Process() {
               >
                 {/* Content Card */}
                 <div className="flex-1 w-full">
-                  <Card className="bg-white/5 border-white/10 backdrop-blur-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <Card className="bg-white/5 border-white/10 backdrop-blur-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl ">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400">

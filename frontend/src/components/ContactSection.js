@@ -152,7 +152,7 @@ function ContactSection() {
                     >
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
-                    <SelectContent className="bg-gray-900 border-white/20">
+                    <SelectContent className="bg-white-10 text-white  border-white/20 bg-gray-900">
                       <SelectItem value="web-development">Web Development</SelectItem>
                       <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
                       <SelectItem value="responsive-design">Responsive Design</SelectItem>
@@ -254,35 +254,16 @@ function ContactSection() {
             </Card>
 
             {/* Newsletter Subscription */}
-            <Card className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 border-blue-500/30 backdrop-blur-lg">
+           
               <CardHeader>
-                <CardTitle className="text-white text-2xl">Stay Updated</CardTitle>
-                <CardDescription className="text-gray-300">
-                  Subscribe to our newsletter for the latest web development tips and trends
-                </CardDescription>
+                
+                
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-                  <Input
-                    type="email"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                    required
-                    data-testid="newsletter-email-input"
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white"
-                    disabled={newsletterLoading}
-                    data-testid="newsletter-submit-btn"
-                  >
-                    {newsletterLoading ? 'Subscribing...' : 'Subscribe Now'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+              
+            
+             
+              
+            
           </div>
         </div>
       </div>

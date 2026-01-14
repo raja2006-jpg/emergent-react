@@ -31,13 +31,10 @@ function Navigation() {
 
         {/* LINKS */}
         <div className="nav-links">
-          <button onClick={() => scrollToSection("services")}>Services</button>
           <button onClick={() => scrollToSection("about")}>About</button>
+          <button onClick={() => scrollToSection("services")}>Services</button>
           <button onClick={() => scrollToSection("contact")}>Contact</button>
         </div>
-        
-
-       
       </div>
     </nav>
     

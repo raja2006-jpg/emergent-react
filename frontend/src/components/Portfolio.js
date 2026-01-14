@@ -141,7 +141,7 @@ function Portfolio() {
                   </a>
                 )}
 
-                <span className="absolute top-4 left-4 bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
+                <span className="absolute top-4 left-1 bg-black/40 text-white  text-xs px-3 py-1 rounded-full">
                   {project.category}
                 </span>
               </div>

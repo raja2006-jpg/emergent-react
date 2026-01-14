@@ -27,17 +27,18 @@ function WhyNeXLet() {
 
   const portfolioImages = [
     'https://static.wixstatic.com/media/7543c9_8b5ef1eb5e884ef2bcd8742bca552b75~mv2.jpg',
-    'https://evisionthemes.com/wp-content/uploads/edd/2017/11/bizplus-free-responsive.png',
     'https://img.freepik.com/premium-photo/dark-mode-ui-design-mobile-app_1179475-25350.jpg',
-    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/879478202903301.668e1baab3185.jpg'
+    'https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/879478202903301.668e1baab3185.jpg',
+    'https://evisionthemes.com/wp-content/uploads/edd/2017/11/bizplus-free-responsive.png',
+    
+    
   ];
 
   const techPartners = [
     'UIdeck',
     'TailGrids',
     'Lineicons',
-    'Ayro UI',
-    'PlainAdmin'
+    'Ayro UI'
   ];
 
   return (
@@ -49,7 +50,7 @@ function WhyNeXLet() {
             Crafting Stunning Websites to Elevate Your Online Presence!
           </h2>
           <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
-            Why NeXLet?
+           <span className='text-white'>Why </span> <span className="text-blue-500">NeX</span><span className='text-white'>Let</span>
           </h3>
         </div>
 
@@ -58,7 +59,7 @@ function WhyNeXLet() {
           {techPartners.map((partner, index) => (
             <div
               key={index}
-              className="px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-gray-300 font-semibold hover:bg-white/10 transition-colors"
+              className="px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-gray-300 font-bold hover:bg-white/10 transition-colors"
             >
               {partner}
             </div>
@@ -76,7 +77,7 @@ function WhyNeXLet() {
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
               We believe a website is more than just an online presence — it is a
-              <span className="text-purple-400 font-semibold"> digital experience </span>
+              <span className="text-blue-400 font-semibold"> digital experience </span>
               that represents your brand's identity, values, and vision.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
@@ -112,7 +113,7 @@ function WhyNeXLet() {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="bg-gradient-to-br from-white/5 to-white/10 border-white/10 backdrop-blur-lg p-6 hover:from-white/10 hover:to-white/15 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-br from-white/5 to-white/10 border-white/10 backdrop-blur-white p-6 hover:from-white/10 hover:to-white/15 transition-all duration-300 hover:scale-105"
               data-testid={`feature-card-${index}`}
             >
               <div className="text-4xl mb-4">{feature.icon}</div>

@@ -70,7 +70,7 @@ function Services() {
             return (
               <Card
                 key={index}
-                className="bg-white/5 border-white/10 backdrop-blur-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 group"
+                className="bg-white/5 border-white/10 backdrop-blur-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl "
                 data-testid={`service-card-${index}`}
               >
                 <CardHeader>
