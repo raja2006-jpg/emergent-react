@@ -1,0 +1,110 @@
+/* Wrapper to center navbar */
+.nav-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Capsule */
+.nav-capsule {
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 63px;
+  padding: 0 29px;
+  background: rgba(221, 214, 214, 0.045);
+  backdrop-filter: blur(30px);
+  border-radius: 13px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  width: 400px;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.nav-capsule:hover {
+  background: rgba(228, 226, 226, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* On scroll */
+
+
+/* Logo */
+.nav-logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-right: 30px;
+  
+}
+
+.nav-logo span {
+  color: #3b82f6;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links button {
+  font-size: 13px;
+  color: #d1d5db;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-links button:hover {
+  color: white;
+}
+
+/* CTA */
+.nav-cta {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: #3b82f6;
+  color: white;
+  transition: background 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #2563eb;
+}
+
+/* -------------------- */
+/* 📱 MOBILE RESPONSIVE */
+/* -------------------- */
+
+@media (max-width: 768px) {
+  .nav-capsule {
+    gap: 12px;
+    padding: px 14px;
+    size: 200px;
+  }
+
+  .nav-logo {
+    font-size: 30px;
+  }
+
+  .nav-links button {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}

@@ -40,7 +40,10 @@ function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 mb-6">
             <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-medium">Build Unique Websites with NeXLet</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-md bg-white-800 text-white-2000 shadow-sm">
+  Build Unique Websites with NeXLet
+</span>
+
           </div>
 
           {/* Main Headline */}
