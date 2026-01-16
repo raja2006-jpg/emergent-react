@@ -4,13 +4,13 @@ import { Quote, Star } from 'lucide-react';
 function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah',
+      name: 'Sarath',
       image: 'https://i.pinimg.com/originals/69/a5/60/69a5602fb6377d1fef9bb45e8db9e415.jpg',
       rating: 5,
       text: 'NeXLet transformed our outdated website into a modern, high-performing platform. Our conversion rate increased by 60%!'
     },
     {
-      name: 'Michael',
+      name: 'Michel',
       image: 'https://photos.bandsintown.com/thumb/17909044.jpeg',
       rating: 5,
       text: 'They understood our vision and created a stunning product with incredible UX.'
@@ -55,7 +55,7 @@ function Testimonials() {
                 key={index}
                 className="min-w-[320px] max-w-[320px] bg-white  backdrop-blur-lg border border-white/10 rounded-xl p-6 shadow-lg"
               >
-                <Quote className="h-8 w-8 text-black-500 opacity-80 mb-3" />
+                <Quote className="h-8 w-8 text-black-500 opacity-80 mb-1  bg-black-500"  />
 
                 <div className="flex gap-1 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -98,7 +98,7 @@ function Testimonials() {
               transform: translateX(0);
             }
             to {
-              transform: translateX(-55%);
+              transform: translateX(-80%);
             }
           }
           .animate-testimonial-slide {

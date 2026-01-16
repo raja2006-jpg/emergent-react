@@ -24,7 +24,7 @@ function Hero() {
       <div className="absolute top-20 left-10 text-blue-500 opacity-20 animate-float">
         <Code2 size={60} />
       </div>
-      <div className="absolute bottom-20 right-10 text-purple-500 opacity-20 animate-float" style={{ animationDelay: '2s' }}>
+      <div className="absolute bottom-20 right-10 text-purple-500 opacity-20 animate-float" style={{ animationDelay: '4s' }}>
         <Palette size={60} />
       </div>
       <div className="absolute top-1/3 right-1/4 text-pink-500 opacity-20 animate-float" style={{ animationDelay: '4s' }}>
@@ -41,7 +41,7 @@ function Hero() {
          
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight mt-30 ">
             Where Code Meets
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">

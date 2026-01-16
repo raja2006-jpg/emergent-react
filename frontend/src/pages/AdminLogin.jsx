@@ -45,7 +45,7 @@ export default function AdminLogin() {
     <div className="min-h-screen flex items-center justify-center bg-black text-white">
       <Card className="w-[380px] bg-white/5 border-white/10">
         <CardHeader>
-          <CardTitle className="text-center text-2xl">
+          <CardTitle className="text-center text-2xl text-white">
             Admin Login
           </CardTitle>
         </CardHeader>
@@ -55,14 +55,14 @@ export default function AdminLogin() {
               placeholder="Admin username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="bg-white/10 text-white"
+              className="bg-white/100 text-black "
             />
             <Input
               type="password"
               placeholder="Admin password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-white/10 text-white"
+              className="bg-white/100 text-black"
             />
 
             <Button

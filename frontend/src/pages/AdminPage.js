@@ -78,7 +78,7 @@ function AdminPage() {
         {/* Content */}
         <Card className="bg-white/5 border-white/10 backdrop-blur-lg">
           <CardHeader>
-            <CardTitle>Contact Submissions</CardTitle>
+            <CardTitle className="text-white">Contact Submissions :</CardTitle>
             <CardDescription>Total submissions: {contacts.length}</CardDescription>
           </CardHeader>
 
@@ -96,10 +96,13 @@ function AdminPage() {
                   >
                     <div className="flex justify-between mb-2">
                       <div>
-                        <h3 className="text-lg font-semibold">{contact.name}</h3>
-                        <div className="flex gap-4 text-sm text-gray-400">
+                        <h3 className="text-white font-semibold "> Name : {contact.name}</h3>
+                        <br>
+                       </br>
+                        <div className="flex gap-20 text-sm text-white">
                           <span className="flex items-center gap-1">
                             <Mail className="h-4 w-4" />
+                        
                             {contact.email}
                           </span>
 
@@ -108,22 +111,31 @@ function AdminPage() {
                               <Phone className="h-4 w-4" />
                               {contact.phone}
                             </span>
+                            
                           )}
                         </div>
                       </div>
+                      
 
                       <div className="text-right">
+                        
                         {contact.service && (
-                          <Badge className="bg-blue-500/20 text-blue-300">
+                          
+                          <Badge  className="bg-blue-500/20 text-blue-300">
+                            Type---
+                            
                             {contact.service}
                           </Badge>
+                          
                         )}
-                        <div className="text-xs text-gray-500 flex items-center gap-1 mt-1">
+                        <div className="text-xs text-white   flex items-center gap-1 mt-1">
                           <Calendar className="h-3 w-3" />
                           {formatDate(contact.timestamp)}
                         </div>
                       </div>
                     </div>
+                     <br>
+                       </br>
 
                     <div className="flex items-start gap-2 text-gray-300">
                       <MessageSquare className="h-4 w-4 mt-1" />
