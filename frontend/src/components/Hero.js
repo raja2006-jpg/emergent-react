@@ -23,9 +23,7 @@ function Hero() {
           backgroundSize: "35px 3500px",
         }}>
         </div>
-        {/* Gradient Beam */}
-      <div className="absolute top-[-15%] left-[7%] md:left-[40%] w-[180px] md:w-[150px] h-[60px] md:h-[700px] bg-gradient-to-br from-black to-transparent blur-3xl rotate-[90deg] md:rotate-[90deg] z-0" />
-
+        
          {/* Black Gradient Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/100" />
       
