@@ -16,13 +16,7 @@ function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
       data-testid="hero-section"
     >
-                <div className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 0.5px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}>
-        </div>
+        
         
          {/* Black Gradient Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/100" />
