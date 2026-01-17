@@ -19,8 +19,8 @@ function Hero() {
                 <div className="absolute inset-0 z-0 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "35px 3500px",
+            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 0.5px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}>
         </div>
         
