@@ -16,9 +16,20 @@ function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
       data-testid="hero-section"
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 grid-background opacity-20"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient"></div>
+                <div className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "35px 3500px",
+        }}>
+        </div>
+        {/* Gradient Beam */}
+      <div className="absolute top-[-15%] left-[7%] md:left-[40%] w-[180px] md:w-[150px] h-[60px] md:h-[700px] bg-gradient-to-br from-black to-transparent blur-3xl rotate-[90deg] md:rotate-[90deg] z-0" />
+
+         {/* Black Gradient Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/100" />
+      
+
       
       {/* Floating Icons */}
       <div className="absolute top-20 left-10 text-blue-500 opacity-20 animate-float">
@@ -41,7 +52,8 @@ function Hero() {
          
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight mt-30 ">
+          
+          <h1    className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight mt-30 ">
             Where Code Meets
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">

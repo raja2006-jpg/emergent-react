@@ -91,6 +91,9 @@ function WhyNeXLet() {
 
           {/* Image Grid */}
           <div className="grid grid-cols-2 gap-4">
+             {/* Gradient Beam */}
+      <div className="absolute top-[21%] left-[7%] md:left-[58%] w-[1008px] md:w-[400px] h-[40px] md:h-[700px] bg-gradient-to-br from-white/10 to-transparent blur-3xl rotate-[90deg] md:rotate-[90deg] z-0" />
+
             {portfolioImages.map((image, index) => (
               <div
                 key={index}

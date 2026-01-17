@@ -53,6 +53,9 @@ function Services() {
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative" data-testid="services-section">
       <div className="max-w-7xl mx-auto">
+          {/* Black Gradient Overlay */}
+      <div className="absolute inset 1 z 1 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/100" />
+      
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
